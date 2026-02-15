@@ -23,12 +23,10 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
       );
 
       /**
-       * Documentation
-       *
        * @see https://api2.splinterlands.com/doc/#/default/get_cards_get_details
        */
-      const getCardDetails = () =>
-        Effect.gen(function* () {
+      const getCardDetails = () => {
+        return Effect.gen(function* () {
           const apiPath = "/cards/get_details";
 
           const request = HttpClientRequest.get(apiPath);
@@ -40,7 +38,8 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
           )(response);
 
           return parsedResponse;
-        }).pipe(Effect.scoped);
+        });
+      };
 
       return { getCardDetails };
     }),
