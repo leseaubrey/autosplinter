@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/splinterlands",
+  "name": "@workspace/core",
   "private": true,
   "type": "module",
   "exports": {
@@ -13,11 +13,6 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
-  },
-  "dependencies": {
-    "@effect/platform": "^0.94.5",
-    "@workspace/core": "workspace:*",
-    "effect": "catalog:"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
