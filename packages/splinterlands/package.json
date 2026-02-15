@@ -14,6 +14,10 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
+  "dependencies": {
+    "@effect/platform": "^0.94.5",
+    "effect": "^3.19.17"
+  },
   "devDependencies": {
     "@autosplinter/eslint-config": "workspace:*",
     "@autosplinter/prettier-config": "workspace:*",
@@ -22,8 +26,5 @@
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config",
-  "dependencies": {
-    "effect": "^3.19.17"
-  }
+  "prettier": "@autosplinter/prettier-config"
 }
