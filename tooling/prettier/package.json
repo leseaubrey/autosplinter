@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/prettier-config",
+  "name": "@workspace/prettier-config",
   "private": true,
   "type": "module",
   "exports": {
@@ -16,9 +16,9 @@
     "prettier-plugin-tailwindcss": "^0.7.1"
   },
   "devDependencies": {
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

@@ -1,4 +1,4 @@
-import { initAuth } from "@autosplinter/auth";
+import { initAuth } from "@workspace/auth";
 import { reactStartCookies } from "better-auth/react-start";
 
 import { env } from "~/env";

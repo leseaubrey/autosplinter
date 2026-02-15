@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/auth",
+  "name": "@workspace/auth",
   "private": true,
   "type": "module",
   "exports": {
@@ -17,20 +17,20 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@autosplinter/db": "workspace:*",
+    "@workspace/db": "workspace:*",
     "@better-auth/expo": "catalog:",
     "@t3-oss/env-core": "^0.13.8",
     "better-auth": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@autosplinter/eslint-config": "workspace:*",
-    "@autosplinter/prettier-config": "workspace:*",
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "@better-auth/cli": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

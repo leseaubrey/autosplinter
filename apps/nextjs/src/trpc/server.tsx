@@ -1,10 +1,10 @@
-import type { AppRouter } from "@autosplinter/api";
 import type { TRPCQueryOptions } from "@trpc/tanstack-react-query";
+import type { AppRouter } from "@workspace/api";
 import { cache } from "react";
 import { headers } from "next/headers";
-import { appRouter, createTRPCContext } from "@autosplinter/api";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
+import { appRouter, createTRPCContext } from "@workspace/api";
 
 import { auth } from "~/auth/server";
 import { createQueryClient } from "./query-client";

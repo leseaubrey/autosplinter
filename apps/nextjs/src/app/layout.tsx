@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { cn } from "@autosplinter/ui";
-import { ThemeProvider, ThemeToggle } from "@autosplinter/ui/theme";
-import { Toaster } from "@autosplinter/ui/toast";
+import { cn } from "@workspace/ui";
+import { ThemeProvider, ThemeToggle } from "@workspace/ui/theme";
+import { Toaster } from "@workspace/ui/toast";
 
 import { env } from "~/env";
 import { TRPCReactProvider } from "~/trpc/react";

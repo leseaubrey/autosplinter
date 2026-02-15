@@ -2,9 +2,9 @@
 
 import type { VariantProps } from "class-variance-authority";
 import { useMemo } from "react";
-import { cn } from "@autosplinter/ui";
-import { Label } from "@autosplinter/ui/label";
-import { Separator } from "@autosplinter/ui/separator";
+import { cn } from "@workspace/ui";
+import { Label } from "@workspace/ui/label";
+import { Separator } from "@workspace/ui/separator";
 import { cva } from "class-variance-authority";
 
 export function FieldSet({

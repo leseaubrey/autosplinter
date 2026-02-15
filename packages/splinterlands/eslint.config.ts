@@ -1,6 +1,5 @@
+import { baseConfig } from "@workspace/eslint-config/base";
 import { defineConfig } from "eslint/config";
-
-import { baseConfig } from "@autosplinter/eslint-config/base";
 
 export default defineConfig(
   {

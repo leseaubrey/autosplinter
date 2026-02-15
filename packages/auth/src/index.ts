@@ -1,6 +1,6 @@
 import type { BetterAuthOptions, BetterAuthPlugin } from "better-auth";
-import { db } from "@autosplinter/db/client";
 import { expo } from "@better-auth/expo";
+import { db } from "@workspace/db/client";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { oAuthProxy } from "better-auth/plugins";

@@ -1,5 +1,5 @@
-import { Button } from "@autosplinter/ui/button";
 import { useNavigate } from "@tanstack/react-router";
+import { Button } from "@workspace/ui/button";
 
 import { authClient } from "~/auth/client";
 

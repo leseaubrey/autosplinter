@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/ui",
+  "name": "@workspace/ui",
   "private": true,
   "type": "module",
   "exports": {
@@ -29,9 +29,9 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "@autosplinter/eslint-config": "workspace:*",
-    "@autosplinter/prettier-config": "workspace:*",
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "@types/react": "catalog:react19",
     "eslint": "catalog:",
     "prettier": "catalog:",
@@ -43,5 +43,5 @@
     "react": "catalog:react19",
     "zod": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

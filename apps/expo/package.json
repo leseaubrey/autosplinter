@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/expo",
+  "name": "@workspace/expo",
   "private": true,
   "main": "index.ts",
   "scripts": {
@@ -44,16 +44,16 @@
     "superjson": "2.2.3"
   },
   "devDependencies": {
-    "@autosplinter/api": "workspace:*",
-    "@autosplinter/eslint-config": "workspace:*",
-    "@autosplinter/prettier-config": "workspace:*",
-    "@autosplinter/tailwind-config": "workspace:*",
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/api": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tailwind-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "@types/react": "catalog:react19",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/tailwind-config",
+  "name": "@workspace/tailwind-config",
   "private": true,
   "type": "module",
   "exports": {
@@ -19,13 +19,13 @@
     "tailwindcss": "catalog:"
   },
   "devDependencies": {
-    "@autosplinter/eslint-config": "workspace:*",
-    "@autosplinter/prettier-config": "workspace:*",
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

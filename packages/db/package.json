@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/db",
+  "name": "@workspace/db",
   "private": true,
   "type": "module",
   "exports": {
@@ -35,13 +35,13 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@autosplinter/eslint-config": "workspace:*",
-    "@autosplinter/prettier-config": "workspace:*",
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "drizzle-kit": "^0.31.5",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

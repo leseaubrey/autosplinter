@@ -1,6 +1,6 @@
 import type { TRPCRouterRecord } from "@trpc/server";
-import { desc, eq } from "@autosplinter/db";
-import { CreatePostSchema, Post } from "@autosplinter/db/schema";
+import { desc, eq } from "@workspace/db";
+import { CreatePostSchema, Post } from "@workspace/db/schema";
 import { z } from "zod/v4";
 
 import { protectedProcedure, publicProcedure } from "../trpc";

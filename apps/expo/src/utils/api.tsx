@@ -1,4 +1,4 @@
-import type { AppRouter } from "@autosplinter/api";
+import type { AppRouter } from "@workspace/api";
 import { QueryClient } from "@tanstack/react-query";
 import { createTRPCClient, httpBatchLink, loggerLink } from "@trpc/client";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
@@ -46,4 +46,4 @@ export const trpc = createTRPCOptionsProxy<AppRouter>({
   queryClient,
 });
 
-export type { RouterInputs, RouterOutputs } from "@autosplinter/api";
+export type { RouterInputs, RouterOutputs } from "@workspace/api";

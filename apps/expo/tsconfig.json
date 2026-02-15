@@ -1,5 +1,5 @@
 {
-  "extends": ["@autosplinter/tsconfig/base.json"],
+  "extends": ["@workspace/tsconfig/base.json"],
   "compilerOptions": {
     "jsx": "react-native",
     "checkJs": false,

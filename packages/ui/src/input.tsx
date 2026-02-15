@@ -1,4 +1,4 @@
-import { cn } from "@autosplinter/ui";
+import { cn } from "@workspace/ui";
 
 export function Input({
   className,

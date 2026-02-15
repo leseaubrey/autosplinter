@@ -9,11 +9,11 @@ await jiti.import("./src/env");
 const config = {
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
-    "@autosplinter/api",
-    "@autosplinter/auth",
-    "@autosplinter/db",
-    "@autosplinter/ui",
-    "@autosplinter/validators",
+    "@workspace/api",
+    "@workspace/auth",
+    "@workspace/db",
+    "@workspace/ui",
+    "@workspace/validators",
   ],
 
   /** We already do linting and typechecking as separate tasks in CI */

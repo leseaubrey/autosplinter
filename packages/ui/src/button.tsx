@@ -1,5 +1,5 @@
 import type { VariantProps } from "class-variance-authority";
-import { cn } from "@autosplinter/ui";
+import { cn } from "@workspace/ui";
 import { cva } from "class-variance-authority";
 import { Slot as SlotPrimitive } from "radix-ui";
 

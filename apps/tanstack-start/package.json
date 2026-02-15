@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/tanstack-start",
+  "name": "@workspace/tanstack-start",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -13,10 +13,10 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@autosplinter/api": "workspace:*",
-    "@autosplinter/auth": "workspace:*",
-    "@autosplinter/db": "workspace:*",
-    "@autosplinter/ui": "workspace:*",
+    "@workspace/api": "workspace:*",
+    "@workspace/auth": "workspace:*",
+    "@workspace/db": "workspace:*",
+    "@workspace/ui": "workspace:*",
     "@fontsource-variable/geist": "^5.2.8",
     "@fontsource-variable/geist-mono": "^5.2.7",
     "@t3-oss/env-core": "^0.13.8",
@@ -37,10 +37,10 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@autosplinter/eslint-config": "workspace:*",
-    "@autosplinter/prettier-config": "workspace:*",
-    "@autosplinter/tailwind-config": "workspace:*",
-    "@autosplinter/tsconfig": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "@workspace/tailwind-config": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
     "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:react19",
@@ -53,5 +53,5 @@
     "vite": "catalog:",
     "vite-tsconfig-paths": "^5.1.4"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

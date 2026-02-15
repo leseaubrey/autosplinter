@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
-import { appRouter, createTRPCContext } from "@autosplinter/api";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
+import { appRouter, createTRPCContext } from "@workspace/api";
 
 import { auth } from "~/auth/server";
 

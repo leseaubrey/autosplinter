@@ -1,7 +1,7 @@
 "use client";
 
-import type { AppRouter } from "@autosplinter/api";
 import type { QueryClient } from "@tanstack/react-query";
+import type { AppRouter } from "@workspace/api";
 import { useState } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import {

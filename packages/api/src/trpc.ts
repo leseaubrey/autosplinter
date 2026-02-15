@@ -6,9 +6,9 @@
  * tl;dr - this is where all the tRPC server stuff is created and plugged in.
  * The pieces you will need to use are documented accordingly near the end
  */
-import type { Auth } from "@autosplinter/auth";
-import { db } from "@autosplinter/db/client";
+import type { Auth } from "@workspace/auth";
 import { initTRPC, TRPCError } from "@trpc/server";
+import { db } from "@workspace/db/client";
 import superjson from "superjson";
 import { z, ZodError } from "zod/v4";
 

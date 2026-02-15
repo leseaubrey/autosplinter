@@ -1,17 +1,5 @@
-import type { RouterOutputs } from "@autosplinter/api";
+import type { RouterOutputs } from "@workspace/api";
 import { Suspense } from "react";
-import { CreatePostSchema } from "@autosplinter/db/schema";
-import { cn } from "@autosplinter/ui";
-import { Button } from "@autosplinter/ui/button";
-import {
-  Field,
-  FieldContent,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@autosplinter/ui/field";
-import { Input } from "@autosplinter/ui/input";
-import { toast } from "@autosplinter/ui/toast";
 import { useForm } from "@tanstack/react-form";
 import {
   useMutation,
@@ -19,6 +7,18 @@ import {
   useSuspenseQuery,
 } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
+import { CreatePostSchema } from "@workspace/db/schema";
+import { cn } from "@workspace/ui";
+import { Button } from "@workspace/ui/button";
+import {
+  Field,
+  FieldContent,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@workspace/ui/field";
+import { Input } from "@workspace/ui/input";
+import { toast } from "@workspace/ui/toast";
 
 import { AuthShowcase } from "~/component/auth-showcase";
 import { useTRPC } from "~/lib/trpc";

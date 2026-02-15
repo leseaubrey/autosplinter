@@ -10,11 +10,11 @@
     "build": "turbo run build",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo run clean",
-    "auth:generate": "pnpm -F @autosplinter/auth generate",
-    "db:push": "turbo -F @autosplinter/db push",
-    "db:studio": "turbo -F @autosplinter/db studio",
+    "auth:generate": "pnpm -F @workspace/auth generate",
+    "db:push": "turbo -F @workspace/db push",
+    "db:studio": "turbo -F @workspace/db studio",
     "dev": "turbo watch dev --continue",
-    "dev:next": "turbo watch dev -F @autosplinter/nextjs...",
+    "dev:next": "turbo watch dev -F @workspace/nextjs...",
     "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
     "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
@@ -27,12 +27,12 @@
     "ios": "expo run:ios"
   },
   "devDependencies": {
-    "@autosplinter/prettier-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
     "@turbo/gen": "^2.5.8",
     "dotenv-cli": "^10.0.0",
     "prettier": "catalog:",
     "turbo": "^2.5.8",
     "typescript": "catalog:"
   },
-  "prettier": "@autosplinter/prettier-config"
+  "prettier": "@workspace/prettier-config"
 }

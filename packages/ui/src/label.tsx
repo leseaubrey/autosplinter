@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@autosplinter/ui";
+import { cn } from "@workspace/ui";
 import { Label as LabelPrimitive } from "radix-ui";
 
 export function Label({

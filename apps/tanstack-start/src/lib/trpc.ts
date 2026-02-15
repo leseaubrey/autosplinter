@@ -1,4 +1,3 @@
-import * as Api from "@autosplinter/api";
 import { createIsomorphicFn } from "@tanstack/react-start";
 import { getRequestHeaders } from "@tanstack/react-start/server";
 import {
@@ -8,6 +7,7 @@ import {
   unstable_localLink,
 } from "@trpc/client";
 import { createTRPCContext } from "@trpc/tanstack-react-query";
+import * as Api from "@workspace/api";
 import SuperJSON from "superjson";
 
 import { auth } from "~/auth/server";

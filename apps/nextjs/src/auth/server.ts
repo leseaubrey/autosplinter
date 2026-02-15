@@ -2,7 +2,7 @@ import "server-only";
 
 import { cache } from "react";
 import { headers } from "next/headers";
-import { initAuth } from "@autosplinter/auth";
+import { initAuth } from "@workspace/auth";
 import { nextCookies } from "better-auth/next-js";
 
 import { env } from "~/env";

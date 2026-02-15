@@ -1,11 +1,11 @@
 "use client";
 
-import { cn } from "@autosplinter/ui";
 import {
   CheckIcon,
   ChevronRightIcon,
   DotFilledIcon,
 } from "@radix-ui/react-icons";
+import { cn } from "@workspace/ui";
 import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui";
 
 export function DropdownMenu({

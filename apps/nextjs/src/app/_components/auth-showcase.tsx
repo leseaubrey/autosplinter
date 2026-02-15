@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { Button } from "@autosplinter/ui/button";
+import { Button } from "@workspace/ui/button";
 
 import { auth, getSession } from "~/auth/server";
 
