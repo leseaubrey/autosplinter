@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@effect/platform": "^0.94.5",
-    "effect": "^3.19.17"
+    "effect": "catalog:"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
