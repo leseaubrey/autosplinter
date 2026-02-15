@@ -7,7 +7,10 @@ import {
 import { Effect } from "effect";
 
 import { SplinterlandsApiConfig } from "../config";
-import { GetCardDetailsResponse } from "./schema";
+import {
+  GetCardDetailsResponse,
+  GetPlayerCardCollectionResponse,
+} from "./schema";
 
 export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClient>()(
   "SplinterlandsApiClient",
@@ -41,7 +44,26 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
         });
       };
 
-      return { getCardDetails };
+      /**
+       * Returns players card collection
+       */
+      const getPlayerCardCollection = (player: string) => {
+        return Effect.gen(function* () {
+          const apiPath = `/cards/collection/${player}`;
+
+          const request = HttpClientRequest.get(apiPath);
+
+          const response = yield* client.execute(request);
+
+          const parsedResponse = yield* HttpClientResponse.schemaBodyJson(
+            GetPlayerCardCollectionResponse,
+          )(response);
+
+          return parsedResponse;
+        });
+      };
+
+      return { getCardDetails, getPlayerCardCollection };
     }),
 
     dependencies: [FetchHttpClient.layer],

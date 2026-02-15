@@ -1,6 +1,10 @@
 import { Schema } from "effect";
 
-import { CardRarity } from "@workspace/core";
+import {
+  CardRarity,
+  MarketListingStatus,
+  MarketListingType,
+} from "@workspace/core";
 
 const CardRaritySchema = Schema.transform(
   Schema.Literal(1, 2, 3, 4),
@@ -33,6 +37,30 @@ const CardRaritySchema = Schema.transform(
   },
 );
 
+const MarketListingStatusSchema = Schema.transform(
+  Schema.Literal(0, 3),
+  Schema.Enums(MarketListingStatus),
+  {
+    decode: (value) => {
+      switch (value) {
+        case 0:
+          return MarketListingStatus.Listed;
+
+        case 3:
+          return MarketListingStatus.Rented;
+      }
+    },
+    encode: (value) => {
+      switch (value) {
+        case MarketListingStatus.Listed:
+          return 0;
+        case MarketListingStatus.Rented:
+          return 3;
+      }
+    },
+  },
+);
+
 /**
  * Get Card Details Response
  */
@@ -51,4 +79,32 @@ export const GetCardDetailsResponse = Schema.Union(
 
 export type GetCardDetailsResponse = Schema.Schema.Type<
   typeof GetCardDetailsResponse
+>;
+
+/**
+ * Get Player Card Collection Response
+ */
+export const GetPlayerCardCollectionSuccessResponse = Schema.Struct({
+  cards: Schema.Array(
+    Schema.Struct({
+      player: Schema.String,
+      uid: Schema.String,
+      card_detail_id: Schema.Number,
+      gold: Schema.Boolean,
+      // TODO: Transform edition to Human Readable String
+      edition: Schema.Number,
+      buy_price: Schema.NullOr(Schema.NumberFromString),
+      market_listing_type: Schema.NullOr(Schema.Enums(MarketListingType)),
+      market_listing_status: Schema.NullOr(MarketListingStatusSchema),
+      bcx: Schema.Number,
+    }),
+  ),
+});
+
+export const GetPlayerCardCollectionResponse = Schema.Union(
+  GetPlayerCardCollectionSuccessResponse,
+);
+
+export type GetPlayerCardCollectionResponse = Schema.Schema.Type<
+  typeof GetPlayerCardCollectionResponse
 >;
