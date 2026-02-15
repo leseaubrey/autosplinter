@@ -6,7 +6,8 @@ import {
 } from "@effect/platform";
 import { Effect } from "effect";
 
-import { CardFoil, MarketListingType } from "@workspace/core";
+import type { CardFoil } from "@workspace/core";
+import { MarketListingType } from "@workspace/core";
 
 import { SplinterlandsApiConfig } from "../config";
 import {
@@ -29,6 +30,8 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
       );
 
       /**
+       * Returns details about the card
+       *
        * @see https://api2.splinterlands.com/doc/#/default/get_cards_get_details
        */
       const getCardDetails = () => {
@@ -48,7 +51,7 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
       };
 
       /**
-       * Documentation
+       * Returns Market Stats for the card
        *
        * @see https://api2.splinterlands.com/doc/#/default/get_market_market_query_by_card
        */
@@ -61,6 +64,8 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
         return Effect.gen(function* () {
           const { listingType, cardDetailId, cardFoil, cardLevel } = input;
 
+          const apiPath = "/market/market_query_by_card";
+
           const paramMapping = {
             type: listingType,
 
@@ -71,16 +76,15 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
 
             card_detail_id: cardDetailId,
 
+            // TODO: Map updated foil types
             ...(cardFoil && {
-              gold: cardFoil === CardFoil.Gold,
+              foil: cardFoil === "GOLD" ? 1 : 0,
             }),
 
             ...(cardLevel && {
               level: cardLevel,
             }),
           };
-
-          const apiPath = "/market/market_query_by_card";
 
           const request = HttpClientRequest.get(apiPath).pipe(
             HttpClientRequest.appendUrlParams(paramMapping),

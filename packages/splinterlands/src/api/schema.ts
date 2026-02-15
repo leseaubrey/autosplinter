@@ -112,6 +112,7 @@ export const GetPlayerCardCollectionSuccessResponse = Schema.Struct({
       player: Schema.String,
       uid: Schema.String,
       card_detail_id: Schema.Number,
+      // TODO: Update to account for new foil types
       gold: Schema.Boolean,
       // TODO: Transform edition to Human Readable String
       edition: Schema.Number,
