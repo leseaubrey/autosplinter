@@ -1,0 +1,7 @@
+{
+  "name": "@autosplinter/tsconfig",
+  "private": true,
+  "files": [
+    "*.json"
+  ]
+}
