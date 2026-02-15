@@ -1,1 +1,1 @@
-export const name = "core";
+export * from "./types";

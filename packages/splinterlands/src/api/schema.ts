@@ -82,6 +82,28 @@ export type GetCardDetailsResponse = Schema.Schema.Type<
 >;
 
 /**
+ * Get Market Query By Card Response
+ */
+export const GetMarketQueryByCardSuccessResponse = Schema.Array(
+  Schema.Struct({
+    uid: Schema.String,
+    buy_price: Schema.Number, // Buy price refers to sell or rent price in DEC
+    bcx: Schema.Number,
+    type: Schema.Enums(MarketListingType),
+    gold: Schema.Boolean,
+    card_detail_id: Schema.Number,
+  }),
+);
+
+export const GetMarketQueryByCardResponse = Schema.Union(
+  GetMarketQueryByCardSuccessResponse,
+);
+
+export type GetMarketQueryByCardResponse = Schema.Schema.Type<
+  typeof GetMarketQueryByCardResponse
+>;
+
+/**
  * Get Player Card Collection Response
  */
 export const GetPlayerCardCollectionSuccessResponse = Schema.Struct({

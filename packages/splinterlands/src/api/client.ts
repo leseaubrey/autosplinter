@@ -6,9 +6,12 @@ import {
 } from "@effect/platform";
 import { Effect } from "effect";
 
+import { CardFoil, MarketListingType } from "@workspace/core";
+
 import { SplinterlandsApiConfig } from "../config";
 import {
   GetCardDetailsResponse,
+  GetMarketQueryByCardResponse,
   GetPlayerCardCollectionResponse,
 } from "./schema";
 
@@ -45,6 +48,55 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
       };
 
       /**
+       * Documentation
+       *
+       * @see https://api2.splinterlands.com/doc/#/default/get_market_market_query_by_card
+       */
+      const getMarketQueryByCard = (input: {
+        listingType: MarketListingType;
+        cardDetailId: number;
+        cardFoil?: CardFoil;
+        cardLevel?: number;
+      }) => {
+        return Effect.gen(function* () {
+          const { listingType, cardDetailId, cardFoil, cardLevel } = input;
+
+          const paramMapping = {
+            type: listingType,
+
+            // This is an artifact of the previous option to rent daily
+            ...(listingType === MarketListingType.Rent && {
+              rental_type: "season",
+            }),
+
+            card_detail_id: cardDetailId,
+
+            ...(cardFoil && {
+              gold: cardFoil === CardFoil.Gold,
+            }),
+
+            ...(cardLevel && {
+              level: cardLevel,
+            }),
+          };
+
+          const apiPath = "/market/market_query_by_card";
+
+          const request = HttpClientRequest.get(apiPath).pipe(
+            HttpClientRequest.appendUrlParams(paramMapping),
+          );
+
+          const response = yield* client.execute(request);
+
+          const parsedResponse = yield* HttpClientResponse.schemaBodyJson(
+            GetMarketQueryByCardResponse,
+          )(response);
+
+          return parsedResponse;
+        });
+      };
+
+      /**
        * Returns players card collection
        */
       const getPlayerCardCollection = (player: string) => {
@@ -63,7 +115,7 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
         });
       };
 
-      return { getCardDetails, getPlayerCardCollection };
+      return { getCardDetails, getMarketQueryByCard, getPlayerCardCollection };
     }),
 
     dependencies: [FetchHttpClient.layer],
