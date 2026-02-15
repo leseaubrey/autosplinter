@@ -1,0 +1,29 @@
+{
+  "name": "@autosplinter/splinterlands",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@autosplinter/eslint-config": "workspace:*",
+    "@autosplinter/prettier-config": "workspace:*",
+    "@autosplinter/tsconfig": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "prettier": "@autosplinter/prettier-config",
+  "dependencies": {
+    "effect": "^3.19.17"
+  }
+}
