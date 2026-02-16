@@ -3,14 +3,14 @@ import { Effect } from "effect";
 import type { CardVariantGroup } from "@workspace/core";
 import { CardFoil } from "@workspace/core";
 
-import type { PriceLadder } from "../price-ladder";
-import { SplinterlandsApiService } from "../api";
+import type { PriceLadder } from "../../price-ladder";
+import { SplinterlandsApiService } from "../../api";
 import {
   allCardsAreUnlisted,
   calculateCardLevel,
   findStepIndexAtOrBelow,
   getUnlistedCards,
-} from "../utils";
+} from "../../utils";
 
 /**
  * This is the scenario when no cards are listed.

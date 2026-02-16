@@ -2,12 +2,12 @@ import { Effect } from "effect";
 
 import type { CardVariantGroup } from "@workspace/core";
 
-import type { PriceLadder } from "../price-ladder";
+import type { PriceLadder } from "../../price-ladder";
 import {
   allListedCardsRented,
   getHighestRentedCardPrice,
   getUnlistedCards,
-} from "../utils";
+} from "../../utils";
 
 /**
  * This is the scenario where all listed cards are rented.

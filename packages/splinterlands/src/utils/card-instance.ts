@@ -48,3 +48,12 @@ export const getHighestRentedCardPrice = (cards: CardInstance[]) => {
       0,
     );
 };
+
+/**
+ * Checks if all available cards are rented.
+ */
+export const allAvailableCardsRented = (cards: CardInstance[]) => {
+  return cards.every(
+    (card) => card.marketListingStatus === MarketListingStatus.Rented,
+  );
+};

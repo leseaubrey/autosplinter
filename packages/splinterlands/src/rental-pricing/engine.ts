@@ -6,7 +6,7 @@ import type { PriceLadder } from "../price-ladder";
 import {
   handleAllListedCardsRentedScenario,
   handleNoCardsListedScenario,
-} from "./";
+} from "./scenarios";
 
 export interface RentalPriceRecommendation {
   cardId: string;
