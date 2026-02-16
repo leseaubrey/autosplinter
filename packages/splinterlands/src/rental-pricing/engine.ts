@@ -5,6 +5,7 @@ import type { CardVariantGroup } from "@workspace/core";
 import type { PriceLadder } from "../price-ladder";
 import {
   handleAllListedCardsRentedScenario,
+  handleCardsListedNoneRentedScenario,
   handleNoCardsListedScenario,
 } from "./scenarios";
 
@@ -16,6 +17,7 @@ export interface RentalPriceRecommendation {
 const scenarioHandlers = [
   handleNoCardsListedScenario,
   handleAllListedCardsRentedScenario,
+  handleCardsListedNoneRentedScenario,
 ];
 
 export const getRentalPriceRecommendationsForGroup = (
