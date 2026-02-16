@@ -1,3 +1,11 @@
+export const Currency = {
+  Credits: "CREDITS",
+  DEC: "DEC",
+  USD: "USD",
+} as const;
+
+export type Currency = (typeof Currency)[keyof typeof Currency];
+
 export const CardRarity = {
   Common: "COMMON",
   Rare: "RARE",
