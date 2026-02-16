@@ -2,6 +2,7 @@ import { Effect } from "effect";
 
 import type { CardVariantGroup } from "@workspace/core";
 
+import type { PurchaseRecommendation } from "../engine";
 import { allAvailableCardsRented } from "../../utils";
 
 /**
@@ -15,6 +16,11 @@ export const handleAllAvailableCardsRentedScenario = (
       return yield* Effect.succeed([]);
     }
 
-    return [group.variant];
+    return [
+      {
+        variant: group.variant,
+        reason: "All available cards rented",
+      },
+    ] satisfies PurchaseRecommendation[];
   });
 };

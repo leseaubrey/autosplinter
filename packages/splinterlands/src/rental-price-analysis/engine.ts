@@ -1,8 +1,13 @@
 import { Effect } from "effect";
 
-import type { CardVariantGroup } from "@workspace/core";
+import type { CardVariant, CardVariantGroup } from "@workspace/core";
 
 import { handleAllAvailableCardsRentedScenario } from "./scenarios";
+
+export interface PurchaseRecommendation {
+  variant: CardVariant;
+  reason: string;
+}
 
 const scenarioHandlers = [handleAllAvailableCardsRentedScenario];
 

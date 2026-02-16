@@ -6,6 +6,7 @@ import { SplinterlandsBlockchainClient } from "../blockchain";
 import { getRentalPriceRecommendationsForGroup } from "../rental-pricing";
 import { cardsGroupIsValidForRental } from "../utils";
 
+// TODO: B
 const minDelayMs = 1200;
 const jitterMs = 300;
 const listingBatchSize = 10;
