@@ -1,6 +1,6 @@
 import { Effect } from "effect";
 
-import { Currency, MarketListingType } from "@workspace/core";
+import { Currency } from "@workspace/core";
 import { HiveBlockchainClient } from "@workspace/hive";
 
 export class SplinterlandsBlockchainClient extends Effect.Service<SplinterlandsBlockchainClient>()(
@@ -21,7 +21,7 @@ export class SplinterlandsBlockchainClient extends Effect.Service<SplinterlandsB
             id: "sm_market_list",
             json: JSON.stringify({
               cards,
-              type: MarketListingType.Rent,
+              type: "season",
               fee: 500,
               list_fee: cards.length, // The list fee is 1 DEC per card
               list_fee_token: Currency.DEC,
@@ -41,6 +41,6 @@ export class SplinterlandsBlockchainClient extends Effect.Service<SplinterlandsB
       return { listCardsForRent };
     }),
 
-    dependencies: [],
+    dependencies: [HiveBlockchainClient.Default],
   },
 ) {}
