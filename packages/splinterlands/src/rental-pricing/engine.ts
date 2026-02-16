@@ -6,6 +6,7 @@ import type { PriceLadder } from "../price-ladder";
 import {
   handleAllListedCardsRentedScenario,
   handleCardsListedNoneRentedScenario,
+  handleCardsListedSomeRentedScenario,
   handleNoCardsListedScenario,
 } from "./scenarios";
 
@@ -18,6 +19,7 @@ const scenarioHandlers = [
   handleNoCardsListedScenario,
   handleAllListedCardsRentedScenario,
   handleCardsListedNoneRentedScenario,
+  handleCardsListedSomeRentedScenario,
 ];
 
 export const getRentalPriceRecommendationsForGroup = (

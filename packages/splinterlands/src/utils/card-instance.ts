@@ -95,3 +95,18 @@ export const getHighestListedCardPrice = (cards: CardInstance[]) => {
       0,
     );
 };
+
+/**
+ * Checks if there are cards listed for rent and at least some of them are rented out.
+ */
+export const hasCardsListedSomeRented = (cards: CardInstance[]) => {
+  const listedCards = cards.filter(
+    (card) => card.marketListingStatus === MarketListingStatus.Listed,
+  );
+
+  const rentedCards = cards.filter(
+    (card) => card.marketListingStatus === MarketListingStatus.Rented,
+  );
+
+  return listedCards.length > 0 && rentedCards.length > 0;
+};
