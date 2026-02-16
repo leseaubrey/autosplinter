@@ -3,14 +3,20 @@ import { Effect } from "effect";
 import type { CardVariantGroup } from "@workspace/core";
 
 import type { PriceLadder } from "../price-ladder";
-import { handleNoCardsListedScenario } from "./scenario-no-cards-listed";
+import {
+  handleAllListedCardsRentedScenario,
+  handleNoCardsListedScenario,
+} from "./";
 
 export interface RentalPriceRecommendation {
   cardId: string;
   price: number;
 }
 
-const scenarioHandlers = [handleNoCardsListedScenario];
+const scenarioHandlers = [
+  handleNoCardsListedScenario,
+  handleAllListedCardsRentedScenario,
+];
 
 export const getRentalPriceRecommendationsForGroup = (
   cardGroup: CardVariantGroup,
