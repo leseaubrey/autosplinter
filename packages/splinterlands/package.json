@@ -17,6 +17,7 @@
   "dependencies": {
     "@effect/platform": "^0.94.5",
     "@workspace/core": "workspace:*",
+    "@workspace/hive": "workspace:*",
     "effect": "catalog:"
   },
   "devDependencies": {
