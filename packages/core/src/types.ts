@@ -29,3 +29,38 @@ export const MarketListingStatus = {
 
 export type MarketListingStatus =
   (typeof MarketListingStatus)[keyof typeof MarketListingStatus];
+
+export interface MarketListing {
+  cardId: string;
+  cardDetailId: number;
+  gold: boolean;
+  bcx: number;
+  marketListingPrice: number;
+  marketListingType: MarketListingType;
+}
+
+export interface CardInstance {
+  player: string;
+  cardId: string;
+  cardDetailId: number;
+  gold: boolean;
+  edition: number;
+  bcx: number;
+  marketListingPrice: number | null;
+  marketListingType: MarketListingType | null;
+  marketListingStatus: MarketListingStatus | null;
+}
+
+export interface CardVariant {
+  cardDetailId: number;
+  bcx: number;
+  // TODO: Update to account for new foil types
+  gold: boolean;
+  edition: number;
+  rarity: CardRarity;
+}
+
+export interface CardVariantGroup {
+  variant: CardVariant;
+  cards: CardInstance[];
+}

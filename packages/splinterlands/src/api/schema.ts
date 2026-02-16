@@ -87,11 +87,11 @@ export type GetCardDetailsResponse = Schema.Schema.Type<
 export const GetMarketQueryByCardSuccessResponse = Schema.Array(
   Schema.Struct({
     uid: Schema.String,
-    buy_price: Schema.Number, // Buy price refers to sell or rent price in DEC
-    bcx: Schema.Number,
-    type: Schema.Enums(MarketListingType),
-    gold: Schema.Boolean,
     card_detail_id: Schema.Number,
+    gold: Schema.Boolean,
+    bcx: Schema.Number,
+    buy_price: Schema.Number, // Buy price refers to sell or rent price in DEC
+    type: Schema.Enums(MarketListingType),
   }),
 );
 
@@ -116,10 +116,10 @@ export const GetPlayerCardCollectionSuccessResponse = Schema.Struct({
       gold: Schema.Boolean,
       // TODO: Transform edition to Human Readable String
       edition: Schema.Number,
+      bcx: Schema.Number,
       buy_price: Schema.NullOr(Schema.NumberFromString),
       market_listing_type: Schema.NullOr(Schema.Enums(MarketListingType)),
       market_listing_status: Schema.NullOr(MarketListingStatusSchema),
-      bcx: Schema.Number,
     }),
   ),
 });

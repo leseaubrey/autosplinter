@@ -30,7 +30,7 @@ export class SplinterlandsApiService extends Effect.Service<SplinterlandsApiServ
             return 0;
           }
 
-          const prices = listings.map((listing) => listing.buy_price);
+          const prices = listings.map((listing) => listing.marketListingPrice);
 
           prices.sort((a, b) => a - b);
 

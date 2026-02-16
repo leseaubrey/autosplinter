@@ -15,6 +15,11 @@ import {
   GetMarketQueryByCardResponse,
   GetPlayerCardCollectionResponse,
 } from "./schema";
+import {
+  transformGetCardDetailsResponse,
+  transformGetMarketQueryByCardResponse,
+  transformGetPlayerCardCollectionResponse,
+} from "./transformers";
 
 export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClient>()(
   "SplinterlandsApiClient",
@@ -46,7 +51,7 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
             GetCardDetailsResponse,
           )(response);
 
-          return parsedResponse;
+          return transformGetCardDetailsResponse(parsedResponse);
         });
       };
 
@@ -96,7 +101,7 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
             GetMarketQueryByCardResponse,
           )(response);
 
-          return parsedResponse;
+          return transformGetMarketQueryByCardResponse(parsedResponse);
         });
       };
 
@@ -115,7 +120,7 @@ export class SplinterlandsApiClient extends Effect.Service<SplinterlandsApiClien
             GetPlayerCardCollectionResponse,
           )(response);
 
-          return parsedResponse;
+          return transformGetPlayerCardCollectionResponse(parsedResponse);
         });
       };
 
