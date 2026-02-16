@@ -1,0 +1,6 @@
+{
+  "extends": "@workspace/tsconfig/compiled-package.json",
+  "compilerOptions": {},
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

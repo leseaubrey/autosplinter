@@ -1,0 +1,20 @@
+{
+  "name": "sandbox",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "pnpm with-env tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@workspace/splinterlands": "workspace:*",
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "catalog:"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "@autosplinter/tsconfig",
+  "name": "@workspace/tsconfig",
   "private": true,
   "files": [
     "*.json"
