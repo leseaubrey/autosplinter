@@ -4,7 +4,7 @@ import type { CardVariantGroup } from "@workspace/core";
 
 import type { PriceLadder } from "../../price-ladder";
 import {
-  getHighestListedCardPrice,
+  getLowestListedCardPrice,
   hasCardsListedNoneRented,
   recommendPricesFromLadder,
 } from "../../utils";
@@ -18,19 +18,18 @@ export const handleCardsListedNoneRentedScenario = (
       return yield* Effect.succeed([]);
     }
 
-    const highestListedPrice = getHighestListedCardPrice(group.cards);
+    const lowestListedPrice = getLowestListedCardPrice(group.cards);
 
-    const highestListedPriceIndex = priceLadder.findIndex(
-      (step) => step.price === highestListedPrice,
+    // Start recommendations at the first step below the lowest listed price
+    const lowestListedPriceIndex = Math.max(
+      0,
+      priceLadder.findIndex((step) => step.price === lowestListedPrice) - 1,
     );
-
-    // Out of Bounds guard
-    if (highestListedPriceIndex === -1) return [];
 
     return recommendPricesFromLadder({
       cards: group.cards,
       priceLadder,
-      startIndex: highestListedPriceIndex,
+      startIndex: lowestListedPriceIndex,
       stepCount: 6,
     });
   });

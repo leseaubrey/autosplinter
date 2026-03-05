@@ -97,6 +97,22 @@ export const getHighestListedCardPrice = (cards: CardInstance[]) => {
 };
 
 /**
+ * Get the lowest listed card price.
+ */
+export const getLowestListedCardPrice = (cards: CardInstance[]) => {
+  const listedCards = cards.filter(
+    (card) => card.marketListingStatus === MarketListingStatus.Listed,
+  );
+
+  if (listedCards.length === 0) return null;
+
+  return listedCards.reduce(
+    (minPrice, card) => Math.min(minPrice, card.marketListingPrice ?? Infinity),
+    Infinity,
+  );
+};
+
+/**
  * Checks if there are cards listed for rent and at least some of them are rented out.
  */
 export const hasCardsListedSomeRented = (cards: CardInstance[]) => {
