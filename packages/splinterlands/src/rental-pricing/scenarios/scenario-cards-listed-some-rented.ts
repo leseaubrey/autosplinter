@@ -23,13 +23,10 @@ export const handleCardsListedSomeRentedScenario = (
 
     const highestRentedCardPrice = getHighestRentedCardPrice(group.cards);
 
-    // TODO: Review
-    const highestRentedCardPriceIndex = priceLadder.findIndex(
-      (step) => step.price > highestRentedCardPrice,
+    const highestRentedCardPriceIndex = Math.max(
+      0,
+      priceLadder.findLastIndex((step) => step.price <= highestRentedCardPrice),
     );
-
-    // Out of Bounds guard
-    if (highestRentedCardPriceIndex === -1) return [];
 
     return recommendPricesFromLadder({
       cards: group.cards,
